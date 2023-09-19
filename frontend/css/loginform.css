@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #ffffff;
+}
+
+.container{
+    width: 900px;
+    max-width: 70%;
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;  
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(84, 76, 76);
+    box-shadow: 5px 5px 15px black;
+}
+
+.container .images{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border: solid 10px rgb(255, 255, 255);
+    border-right: none;
+    background-image: url('https://jaljoy.com/wp-content/uploads/2021/03/Art-Basin-1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition:background-image 1s;
+}
+
+.container .images .slideBtn{
+    width: 30px;
+    height: 30px;
+    border: 2px solid ;
+    background-color: rgb(8, 108, 196);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 40px;
+}
+
+.container .images .rightBtn{
+    transform: rotate(-180deg);
+}
+
+.container .loginPage{
+    width: 50%;
+    height: 100%;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .loginPage .user-img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url('https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png');
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    margin:20px 0;  
+}
+
+.container .loginPage h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container .loginPage form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px ;
+}
+
+.container .loginPage form label{
+    color: rgb(165, 161, 161);
+}
+
+.container .loginPage form input{
+    width: 90%;
+    border: none;
+    background-color:transparent;
+    border-bottom: 2px solid rgb(225, 225, 225) ;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 15px;
+    transition:border-bottom 0.7s;
+}
+
+.container .loginPage form input:focus{
+    outline: none;
+    border-bottom: rgb(8, 108, 196) 2px solid;
+}
+
+.container .loginPage form .loginBtn{
+   height: 40px;
+   background-color: rgb(8, 108, 196);
+   border: none;
+   font-size: 20px;
+   text-transform: uppercase;
+   border-radius: 20px;
+   color: white;
+   font-weight: bolder;
+   margin-top: 20px;
+   transition: background-color 0.5s;
+}
+.container .loginPage form .loginBtn:hover{
+   background-color:  rgb(13, 59, 99) ;
+}
+
+.container .loginPage form .links ,a{
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.container .loginPage form .links .forgetPas{
+    color: rgb(196, 8, 8);
+}
+
+.container .loginPage form .links .signUp{
+    color: rgb(79, 79, 251);
+}
+
+@media  screen and (max-width : 700px){
+   .container .images{
+         transition: all 0.5s ;
+         display: none;
+    }
+      
+    .container .loginPage{
+        width: 100%;
+
+    }
+}
