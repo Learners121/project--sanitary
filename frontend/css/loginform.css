@@ -120,6 +120,7 @@ body{
    font-weight: bolder;
    margin-top: 20px;
    transition: background-color 0.5s;
+   cursor: pointer;
 }
 .container .loginPage form .loginBtn:hover{
    background-color:  rgb(13, 59, 99) ;
