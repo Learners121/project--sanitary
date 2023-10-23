@@ -1,88 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/product_display.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/product_display.css">
-</head>
-
-<body>
-  <table id="billing-main">
-    <tr>
-      <th>Name</th>
-      <th>Product Name</th>
-      <th>Address</th>
-      <th>Number</th>
-    </tr>
-    <tr>
-      <td>Product A</td>
-      <td>123 Main St</td>
-      <td>india</td>
-      <td>(123) 456-7890</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product B</td>
-      <td>456 Oak Ave</td>
-      <td>india</td>
-      <td>(456) 789-0123</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product C</td>
-      <td>789 Elm Blvd</td>
-      <td>india</td>
-      <td>(789) 012-3456</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product C</td>
-      <td>789 Elm Blvd</td>
-      <td>india</td>
-      <td>(789) 012-3456</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product C</td>
-      <td>789 Elm Blvd</td>
-      <td>india</td>
-      <td>(789) 012-3456</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product C</td>
-      <td>789 Elm Blvd</td>
-      <td>india</td>
-      <td>(789) 012-3456</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product C</td>
-      <td>789 Elm Blvd</td>
-      <td>india</td>
-      <td>(789) 012-3456</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-    <tr>
-      <td>Product C</td>
-      <td>789 Elm Blvd</td>
-      <td>india</td>
-      <td>(789) 012-3456</td>
-      <td><input type="button" value="Edit" id="edit" class="edit-btn"></td>
-      <td><input type="button" value="Delete &times;" id="delete" class="delete-btn"></td>
-    </tr>
-  </table>
-  <input class="userid_button" type="submit" value="Create Bill">
-  <script src="../js/viewProducts.js"></script>
-</body>
-
+  <body>
+    <table id="billing-main">
+      <tr>
+        <th>Name</th>
+        <th>Product Name</th>
+        <th>Address</th>
+        <th>Number</th>
+      </tr>
+      <tr>
+        <td>Product A</td>
+        <td>123 Main St</td>
+        <td>india</td>
+        <td>(123) 456-7890</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product B</td>
+        <td>456 Oak Ave</td>
+        <td>india</td>
+        <td>(456) 789-0123</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product C</td>
+        <td>789 Elm Blvd</td>
+        <td>india</td>
+        <td>(789) 012-3456</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product C</td>
+        <td>789 Elm Blvd</td>
+        <td>india</td>
+        <td>(789) 012-3456</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product C</td>
+        <td>789 Elm Blvd</td>
+        <td>india</td>
+        <td>(789) 012-3456</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product C</td>
+        <td>789 Elm Blvd</td>
+        <td>india</td>
+        <td>(789) 012-3456</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product C</td>
+        <td>789 Elm Blvd</td>
+        <td>india</td>
+        <td>(789) 012-3456</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Product C</td>
+        <td>789 Elm Blvd</td>
+        <td>india</td>
+        <td>(789) 012-3456</td>
+        <td><input type="button" value="Edit" id="edit" class="edit-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="Delete &times;"
+            id="delete"
+            class="delete-btn"
+          />
+        </td>
+      </tr>
+    </table>
+    <input class="userid_button" type="submit" value="Create Bill" />
+  </body>
+  <script src="../js/billing.js"></script>
 </html>
