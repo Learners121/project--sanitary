@@ -1,9 +1,12 @@
 import { Router } from 'express';
+import controllers from '../controllers/index.js';
 
 const billingHistoryRoute = Router();
 
-billingHistoryRoute.get('/', (req, res) => {
-  res.send('working');
-});
+billingHistoryRoute.get('/', 
+ 
+controllers.billingHistoryRoute.billingHistoryRoute
+
+);
 
 export default billingHistoryRoute;
