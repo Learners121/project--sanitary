@@ -1,0 +1,16 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - '8000:$PORT'
+    depends_on:
+      - mysql-db
+  mysql-db:
+    image: mysql:8.0.34
+    ports:
+      - 3306:$DATABASE_PORT
+    environment:
+      DATABASE_USER: $DATABASE_USER
+      DATABASE_PASSWORD: $DATABASE_PASSWORD
+      DATABASE_NAME: $DATABASE_NAME
