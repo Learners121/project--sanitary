@@ -1,18 +1,11 @@
-import { Router } from "express";
+import { Router } from 'express';
+import controllers from '../controllers/index.js';
 
 const addProductRoute = Router();
-addProductRoute.post("/", (req, res) => {
-  const {
-    category,
-    "class-type": classType,
-    "product-name": productName,
-    "product-code": productCode,
-    "product-size": productSize,
-    "product-rate": productRate,
-    "product-quantity": productQnt,
-    "product-company": productCompany,
-  } = req.body;
-  console.log(category, classType);
-});
+
+addProductRoute.get(
+  '/add-item',
+  controllers.addProductControllers.addProductController
+);
 
 export default addProductRoute;
