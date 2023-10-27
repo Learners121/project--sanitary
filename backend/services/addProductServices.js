@@ -12,6 +12,7 @@ const addProductService = async (data, res) => {
     res.status(500).send();
   } finally {
     console.log('inside layer');
+    conn.end();
   }
 };
 
