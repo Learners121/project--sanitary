@@ -14,11 +14,11 @@ app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/user', routes.userRoute); // shahnavaz
-app.use('/add-product', routes.addProductRoute); // shahnavaz
-app.use('/view-product', routes.viewProductRoute); // shahnavaz
-app.use('/billing-history', routes.billingHistoryRoute); // zubair
-app.use('/pending-bills', routes.pendingBillsRoute); // zubair
+app.use('/user', routes.userRoute);
+app.use('/add-product', routes.addProductRoute);
+app.use('/view-product', routes.viewProductRoute);
+app.use('/billing-history', routes.billingHistoryRoute);
+app.use('/pending-bills', routes.pendingBillsRoute);
 
 const server = http.createServer(app);
 
