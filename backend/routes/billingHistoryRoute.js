@@ -5,7 +5,17 @@ const billingHistoryRoute = Router();
 
 billingHistoryRoute.get(
   '/',
-  controllers.billingHistoryControllers.billingHistoryController
+  controllers.billingHistoryControllers.getBillingHistoryController
+);
+
+billingHistoryRoute.post(
+  '/edit-item',
+  controllers.billingHistoryControllers.editBillingHistoryController
+);
+
+billingHistoryRoute.post(
+  '/delete-item',
+  controllers.billingHistoryControllers.deleteBillingHistoryController
 );
 
 export default billingHistoryRoute;
