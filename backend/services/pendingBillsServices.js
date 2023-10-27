@@ -1,5 +1,3 @@
-const pendingBillService = (data ,resp) => {
+const pendingBillService = (data, resp) => {};
 
-}
-
-export default {pendingBillService}
+export default { pendingBillService };
