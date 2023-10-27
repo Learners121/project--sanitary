@@ -1,20 +1,23 @@
 import services from '../services/index.js';
 
 const getBillingHistoryController = (req, res) => {
-  services.billingHistoryServices.billingHistoryService(
-    'getBillingHistoryController'
+  services.billingHistoryServices.getBillingHistoryService(
+    'getBillingHistoryController',
+    res
   );
 };
 
 const editBillingHistoryController = (req, res) => {
-  services.billingHistoryServices.billingHistoryService(
-    'editBillingHistoryController'
+  services.billingHistoryServices.editBillingHistoryService(
+    'editBillingHistoryController',
+    res
   );
 };
 
 const deleteBillingHistoryController = (req, res) => {
-  services.billingHistoryServices.billingHistoryService(
-    'deleteBillingHistoryController'
+  services.billingHistoryServices.deleteBillingHistoryService(
+    'deleteBillingHistoryController',
+    res
   );
 };
 
