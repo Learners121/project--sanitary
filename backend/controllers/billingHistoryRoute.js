@@ -1,11 +1,9 @@
-import services from "../services/index.js"
+import services from '../services/index.js';
 
-const billingHistoryRoute = (req,resp)=>{
- 
-    services.billingHistoryServices.billingHistoryService
-    
-  resp.send('billingHistoryRoute') 
-   
-}
+const billingHistoryController = (req, resp) => {
+  services.billingHistoryServices.billingHistoryService;
 
-export default {billingHistoryRoute}
+  resp.send('billingHistoryRoute');
+};
+
+export default { billingHistoryController };

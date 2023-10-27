@@ -3,10 +3,9 @@ import controllers from '../controllers/index.js';
 
 const billingHistoryRoute = Router();
 
-billingHistoryRoute.get('/', 
- 
-controllers.billingHistoryRoute.billingHistoryRoute
-
+billingHistoryRoute.get(
+  '/',
+  controllers.billingHistoryControllers.billingHistoryController
 );
 
 export default billingHistoryRoute;

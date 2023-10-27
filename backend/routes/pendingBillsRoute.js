@@ -7,7 +7,7 @@ pendingBillsRoute.get(
   
   '/',
   
-  controllers.pendingBillsController.pendingBillsController
+  controllers.pendingBillsControllers.pendingBillsController
 );
 
 export default pendingBillsRoute;
