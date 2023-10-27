@@ -6,8 +6,6 @@ const getData = async (conn, tableName, fieldsName) => {
     return rows;
   } catch (err) {
     throw new Error(err.sqlMessage);
-  } finally {
-    conn.end();
   }
 };
 
