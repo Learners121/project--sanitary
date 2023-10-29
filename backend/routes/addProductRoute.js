@@ -3,7 +3,7 @@ import controllers from '../controllers/index.js';
 
 const addProductRoute = Router();
 
-addProductRoute.get(
+addProductRoute.post(
   '/add-item',
   controllers.addProductControllers.addProductController
 );
