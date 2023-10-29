@@ -46,5 +46,5 @@ async function postData(event,url) {
 }
 
 form.addEventListener("submit", (event) =>
-  postData(event, `${API_URL}/add-product`)
+  postData(event, `${API_URL}/add-product/add-item`)
 );
