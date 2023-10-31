@@ -5,20 +5,20 @@
 }
 
 body {
-  background:#f1f1f1 ;
+  background: #f1f1f1;
 }
 
 h1 {
   display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding-bottom: -5px;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: 1px 2px 12px;
-    /* font-family: 'Cedarville Cursive', cursive; */
-    text-decoration: underline;
-  }
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: -5px;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 2px 12px;
+  /* font-family: 'Cedarville Cursive', cursive; */
+  text-decoration: underline;
+}
 
 table {
   width: 100%;
@@ -27,15 +27,16 @@ table {
 
 #billing-main th,
 #billing-main td {
-   text-align: center;
-    padding: 0.5rem;
-    box-shadow: 1px 4px 8px;
-    text-transform: capitalize;
+  text-align: center;
+  padding: 0.5rem;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
 }
-th{
+
+th {
   background-color: lightgray;
 }
-th :first-child{
+th :first-child {
   border-radius: 10px 0px 0px 0;
 }
 th :last-child {
