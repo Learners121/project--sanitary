@@ -1,7 +1,7 @@
 const getData = async (conn, tableName, fieldsName) => {
   try {
-    const [rows, fields] = await conn.execute(
-      `SELECT ${fieldsName.join(',') || '*'} FROM ${tableName}`
+    const [rows] = await conn.execute(
+      `SELECT ${fieldsName.join(",") || "*"} FROM ${tableName}`
     );
     return rows;
   } catch (err) {
@@ -21,4 +21,4 @@ const insertData = async (conn, tableName, fieldsName) => {
 };
 
 
-export { getData };
+export { getData, insertData };
