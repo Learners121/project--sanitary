@@ -8,7 +8,7 @@ import http from "http";
 const port = process.env.PORT || "8080";
 const app = express();
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: '*' }));
 
 // both body parser
 app.use(bodyParser.json());
