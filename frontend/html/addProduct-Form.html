@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Product</title>
-    <link rel="stylesheet" href="../css/addProduct-Form.css" />
-  </head>
-  <body>
-    <main>
-      <div class="container1">
-        <a href="./Add_product.html"><button>Add Product</button></a>
-        <a href="./VIewProduct.html"><button>View Product</button></a>
-        <a href="./billing.html"><button>Billing History</button></a>
-        <a href="./pending.html"><button>Pending Bills</button></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Product</title>
+  <link rel="stylesheet" href="../css/addProduct-Form.css" />
+</head>
+
+<body>
+  <main>
+    <div class="container1">
+      <a href="./Add_product.html"><button>Add Product</button></a>
+      <a href="./VIewProduct.html"><button>View Product</button></a>
+      <a href="./billing.html"><button>Billing History</button></a>
+      <a href="./pending.html"><button>Pending Bills</button></a>
+    </div>
+    <div class="container2">
+      <div id="main-container">
+        <div class="container" id="grid">
+          <h1>Product Order Form</h1>
+          <form id="submit-form">
+            <label for="Category">Category Name:</label>
+            <select id="product" name="categoryName" class="my-dropdown">
+              <option>Choose Category</option>
+              <option>Name 1</option>
+              <option>Name 2</option>
+              <option>Name 3</option>
+            </select>
+
+            <label for="class">Class Type:</label>
+            <select id="class" name="classType" class="my-dropdown">
+              <option>Choose Class</option>
+              <option>Type 1</option>
+              <option>Type 2</option>
+              <option>Type 3</option>
+            </select>
+
+            <label for="name">Product Name:</label>
+            <input autocomplete="off" type="text" id="productname" name="productName" placeholder="Enter Product Name"
+              required />
+
+            <label for="Code">Product Code:</label>
+            <input autocomplete="off" type="text" id="productCode" name="productCode" placeholder="Enter Product Code"
+              required />
+
+            <label for="Size">Product Size:</label>
+            <input autocomplete="off" type="text" id="productSize" name="productSize" placeholder="Enter Product Size"
+              required />
+
+            <label for="Rate">Product Rate:</label>
+            <input autocomplete="off" type="number" id="productRate" name="productRate" placeholder="Enter Product Rate"
+              required />
+
+            <label for="Quantity">Product Quantity:</label>
+            <input autocomplete="off" type="number" id="productQuantity" name="productQuantity" min="1" max="10"
+              placeholder="Enter Product Quantity" required />
+
+            <label for="Company">Product Company:</label>
+            <input autocomplete="off" type="text" id="productCompany" name="productCompany"
+              placeholder="Enter Product Company" required />
+            <button type="submit">Add Order</button>
+          </form>
+        </div>
       </div>
-      <div class="container2">
-        <h1>Product Order Form</h1>
-        <form id="form">
-          <label for="category">Category name</label>
-          <input type="text" name="category" placeholder="Category Name" />
-          <label for="class-type">Class Type</label>
-          <input type="text" name="classType" placeholder="Class Type" />
-          <label for="product-name">Product Name</label>
-          <input type="text" name="productName" placeholder="Product Name" />
-          <label for="product-code">Product Code</label>
-          <input type="text" name="productCode" placeholder="Product Code" />
-          <label for="product-size">Product Size</label>
-          <input type="text" name="productSize" placeholder="Product Size" />
-          <label for="product-rate">Product Rate</label>
-          <input type="text" name="productRate" placeholder="Product Rate" />
-          <label for="product-quantity">Product Quantity</label>
-          <input
-            type="text"
-            name="productQuantity"
-            placeholder="Product Quantity"
-          />
-          <label for="product-company">Product Company</label>
-          <input
-            type="text"
-            name="productCompany"
-            placeholder="Product Company"
-          />
-          <input type="submit" id="" />
-        </form>
-      </div>
-    </main>
-  </body>
-  <script src="../js/Add_product.js"></script>
+  </main>
+</body>
+<script src="../js/Add_product.js"></script>
+
 </html>
