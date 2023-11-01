@@ -1,36 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Products</title>
-    <link rel="stylesheet" href="../css/ViewProduct.css" />
-  </head>
-  <body>
-    <main>
-      <div class="container1">
-        <a href="./Add_product.html"><button>Add Product</button></a>
-        <a href="./VIewProduct.html"><button>View Product</button></a>
-        <a href="./billing.html"><button>Billing History</button></a>
-        <a href="./pending.html"><button>Pending Bills</button></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&family=Bebas+Neue&family=Cedarville+Cursive&family=Roboto+Slab:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/ViewProduct.css" />
+</head>
+
+<body>
+  <div class="menu-bar">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="container1">
+    <a href="./Add_product.html"><button>Add Product</button></a>
+    <a href="./VIewProduct.html"><button>View Product</button></a>
+    <a href="./billing.html"><button>Billing History</button></a>
+    <a href="./pending.html"><button>Pending Bills</button></a>
+  </div>
+  <div class="innerContainer1">
+    <p>Sort By :
+    <pre> </pre>
+    </p>
+    <select name="" id="sort-by">
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+      <option value="code-asc">Code (Low-High)</option>
+      <option value="code-desc">Code (High-Low)</option>
+      <option value="category-asc">Category (A-Z)</option>
+      <option value="category-desc">Category (Z-A)</option>
+    </select>
+  </div>
+  <header class="page-heading">
+    <h1>View Product </h1>
+  </header>
+  <table id="table-container">
+    <tr class="heading-section">
+      <th>ID</th>
+      <th>Costomer Name</th>
+      <th>Mobile Number</th>
+      <th>Address</th>
+      <th>Total Amount</th>
+      <th>deposit</th>
+      <th>pending amount</th>
+      <th>purchased products</th>
+      <th>purchased time</th>
+      <th><i class="fa-solid fa-file-pen"></i></th>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">1.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
       </div>
-      
-        <div class="innerContainer1">
-          <p>Sort By: <pre> </pre></p>
-          <select name="" id="">
-            <option value="name-asc">Name (A-Z)</option>
-            <option value="name-desc">Name (Z-A)</option>
-            <option value="code-asc">Code (Low-High)</option>
-            <option value="code-desc">Code (High-Low)</option>
-            <option value="category-asc">Category (A-Z)</option>
-            <option value="category-desc">Category (Z-A)</option>
-          </select>
-        </div>
-        <div class="innerContainer3">
-          <button>Previous</button>
-          <button>Next</button>
-        </div>
-    </main>
-  </body>
-  <script src="../js/VIewProduct.js"></script>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">2.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">3.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">4.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">5.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">6.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">7.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">8.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">9.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+    <tr class="data-section">
+      <td class="sr-no">10.</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>xyz</td>
+      <td>
+        <button class="edit-btn">
+          Edit
+        </button>
+      </td>
+      </div>
+    </tr>
+  </table>
+  <div class="innerContainer3">
+    <button>Previous</button>
+    <button>Next</button>
+  </div>
+</body>
+<script src="../js/VIewProduct.js"></script>
+
 </html>

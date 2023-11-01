@@ -2,18 +2,21 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: #023047;
   overflow: hidden;
 }
+
 .container1 {
   border-bottom: 1px solid black;
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
 }
+
 .container1 button {
   height: 50px;
   width: 200px;
@@ -25,6 +28,7 @@ body {
   outline: none;
   transition: 0.3s all;
 }
+
 .container1 button:hover {
   background-color: #218199;
 }
@@ -39,19 +43,51 @@ body {
 }
 
 .container2 button {
-    margin-top: 30px;
-    height: 80px;
-    width: 280px;
-    border-radius: 20px;
-    border: none;
-    font-size: 1rem;
-    background-color: #219ebc;
-    box-shadow: 0px 0px 20px black;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s all;
+  margin-top: 30px;
+  height: 80px;
+  width: 280px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  background-color: #219ebc;
+  box-shadow: 0px 0px 20px black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s all;
 }
 
-.container2 button:hover{
-    background-color: #218199;
+.container2 button:hover {
+  background-color: #218199;
+}
+
+@media only screen and (max-width: 1115px) {
+  .container1 {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .container1 button {
+    width: 100px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .container1 {
+    justify-content: space-around;
+  }
+
+  .container1 button {
+    width: 80px;
+    margin: 5px;
+    font-size: 0.8rem;
+  }
+
+  .container2 button {
+    height: 80px;
+    width: 280px;
+    border-radius: 0.4rem;
+  }
 }
