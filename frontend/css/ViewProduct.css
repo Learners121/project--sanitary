@@ -153,33 +153,25 @@ body {
 #table-container {
   background-color: #f9f9f9;
   width: 100%;
-  flex-wrap: wrap;
-  margin: 10px;
+  flex-wrap: wrap;  
+  margin: 20px;
 }
 
 th {
   padding: 0.2rem;
-  box-shadow: 1px 1px 5px;
+  border: 1px solid black;
   text-transform: capitalize;
 }
 
 td {
   text-align: center;
   padding: 0.5rem;
-  box-shadow: 1px 4px 8px;
   text-transform: capitalize;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .heading-section {
   background-color: lightgray;
-}
-
-.heading-section :first-child {
-  border-radius: 10px 0px 0px 0;
-}
-
-.heading-section :last-child {
-  border-radius: 0px 10px 0px 0px;
 }
 
 #table-container {
@@ -192,7 +184,7 @@ td {
   color: lightslategray;
 }
 
-.edit-btn {
+.btn {
   background: lightgray;
   border: none;
   outline: none;
@@ -203,6 +195,9 @@ td {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.edit-btn:hover {
+.btn:hover {
   filter: brightness(0.9);
+}
+.check-box{
+  cursor: pointer;
 }
