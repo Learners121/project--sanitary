@@ -1,11 +1,11 @@
-const form = document.getElementById("form");
-const API_URL = `http://localhost:8000`;
+let form = document.getElementById("form");
+let API_URL = `http://localhost:8000`;
 
 async function handleFormData() {
   try {
-    const requestObj = {};
-    const formData = new FormData(form);
-    for (const [eachKey, eachValue] of formData) {
+    let requestObj = {};
+    let formData = new FormData(form);
+    for (let [eachKey, eachValue] of formData) {
       requestObj[eachKey] = eachValue;
     }
     return requestObj;
@@ -13,22 +13,21 @@ async function handleFormData() {
     console.log(`got empty data form FormData`, error);
   }
 }
-
 async function postRequest(url, formData) {
   try {
-    const requestHeader = {
+    let requestHeader = {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
         "Content-Type": "application/json",
       },
     };
-    const response = await fetch(url, requestHeader);
+    let response = await fetch(url, requestHeader);
     if (!response.ok) {
       throw new Error(`Can not post Empty data`);
     }
     console.log(formData);
-    const data = await response.json();
+    let data = await response.json();
     return data;
   } catch (error) {
     console.log("Error", error);
@@ -37,8 +36,8 @@ async function postRequest(url, formData) {
 async function postData(event,url) {
   event.preventDefault();
   try {
-    const data = await handleFormData();
-    const result = await postRequest(url, data);
+    let data = await handleFormData();
+    let result = await postRequest(url, data);
     console.log("Data posted Successfully", result);
   } catch (error) {
     console.log(`Error at postData`, error);
