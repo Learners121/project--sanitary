@@ -14,5 +14,4 @@ const addProductController = (req, res) => {
   } = (dataObj = req.body);
   services.addProductServices.addProductService(dataObj, res);
 };
-
 export default { addProductController };

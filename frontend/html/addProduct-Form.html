@@ -22,43 +22,31 @@
           <h1>Product Order Form</h1>
           <form id="submit-form">
             <label for="Category">Category Name:</label>
-            <select id="product" name="categoryName" class="my-dropdown">
-              <option>Choose Category</option>
-              <option>Name 1</option>
-              <option>Name 2</option>
-              <option>Name 3</option>
-            </select>
-
-            <label for="class">Class Type:</label>
-            <select id="class" name="classType" class="my-dropdown">
-              <option>Choose Class</option>
-              <option>Type 1</option>
-              <option>Type 2</option>
-              <option>Type 3</option>
-            </select>
-
+            <input type="text" name="category-name" placeholder="Enter Category Name" required />
+            <label for="class-type">Class Type</label>
+            <input type="text" name="class-type" placeholder="Enter Class Type">
             <label for="name">Product Name:</label>
-            <input autocomplete="off" type="text" id="productname" name="productName" placeholder="Enter Product Name"
+            <input autocomplete="off" type="text" id="productname" name="product-name" placeholder="Enter Product Name"
               required />
 
             <label for="Code">Product Code:</label>
-            <input autocomplete="off" type="text" id="productCode" name="productCode" placeholder="Enter Product Code"
+            <input autocomplete="off" type="text" id="product-code" name="product-code" placeholder="Enter Product Code"
               required />
 
             <label for="Size">Product Size:</label>
-            <input autocomplete="off" type="text" id="productSize" name="productSize" placeholder="Enter Product Size"
+            <input autocomplete="off" type="text" id="product-size" name="product-size" placeholder="Enter Product Size"
               required />
 
             <label for="Rate">Product Rate:</label>
-            <input autocomplete="off" type="number" id="productRate" name="productRate" placeholder="Enter Product Rate"
+            <input autocomplete="off" type="number" id="product-rate" name="product-rate" placeholder="Enter Product Rate"
               required />
 
             <label for="Quantity">Product Quantity:</label>
-            <input autocomplete="off" type="number" id="productQuantity" name="productQuantity" min="1" max="10"
+            <input autocomplete="off" type="number" id="product-qty" name="product-qty" min="1" max="10"
               placeholder="Enter Product Quantity" required />
 
             <label for="Company">Product Company:</label>
-            <input autocomplete="off" type="text" id="productCompany" name="productCompany"
+            <input autocomplete="off" type="text" id="product-company" name="product-company"
               placeholder="Enter Product Company" required />
             <button type="submit">Add Order</button>
           </form>
