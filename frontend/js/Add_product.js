@@ -1,4 +1,4 @@
-let form = document.getElementById("form");
+let form = document.getElementById("submit-form");
 let API_URL = `http://localhost:8000`;
 
 async function handleFormData() {
