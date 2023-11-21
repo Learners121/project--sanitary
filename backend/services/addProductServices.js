@@ -7,6 +7,8 @@ const addProductService = async (data, res) => {
     const fieldsName = {
       Category: ["name"],
       Product_details: [
+        "Catogary_id",
+        "class_type",
         "Product_name",
         "Product_code",
         "Product_size",
