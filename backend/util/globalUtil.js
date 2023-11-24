@@ -1,24 +1,33 @@
-const getData = async (conn, tableName, fieldsName) => {
+const getData = async (conn, sql) => {
   try {
-    const [rows] = await conn.execute(
-      `SELECT ${fieldsName.join(",") || "*"} FROM ${tableName}`
-    );
+    const [rows] = await conn.query(sql);
     return rows;
   } catch (err) {
     throw new Error(err.sqlMessage);
   }
 };
 
-const insertData = async (conn, tableName, fieldsName) => {
+const insertData = async (conn, sql) => {
   try {
-    const [rows, fields] = await conn.execute(
-      `insert into values(${fieldsName.join(',')}) FROM ${tableName}`
-    );
-    return rows;
+    const [rows, fields] = await conn.query(sql);
+    return rows.insertId;
   } catch (err) {
+    console.log(err);
     throw new Error(err.sqlMessage);
   }
 };
 
+const checkData = async (conn, sql) => {
+  try {
+    let result = null;
+    const data = await conn.query(sql);
+    if(data[0].length > 0) {
+      result = data[0][0]
+    }
+    return result;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
 
-export { getData, insertData };
+export { getData, insertData, checkData };
