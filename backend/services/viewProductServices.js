@@ -23,6 +23,7 @@ JOIN
 JOIN
     class cls ON pd.class_id = cls.class_id;
     `;
+    
     const result = await getData(conn, sql);
     if (result.length > 0) {
       res.send(result);
