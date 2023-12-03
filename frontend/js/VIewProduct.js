@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       } else {
         eachRow.removeAttribute("data-uuid");
         addItemBtn.style.display = "none";
-      }
+      };
     });
   }
 
