@@ -44,19 +44,21 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function createTableDataRows(data) {
     data.forEach((item) => {
+      console.log(item.Product_uuid);
       const dataRow = document.createElement("tr");
-
-      Object.values(item).forEach((cellData) => {
+      Object.values(item).slice(1).forEach((cellData) => {
         const td = document.createElement("td");
         td.textContent = cellData;
         dataRow.appendChild(td);
-      });
+
+    });
+    
       const editButton = document.createElement("button");
       editButton.setAttribute("class", "edit-btn");
       editButton.textContent = "Edit";
       dataRow.appendChild(editButton);
-
-      tableBody.appendChild(dataRow);
+      tableBody.appendChild(dataRow)
+      ;
     });
   }
 
@@ -74,6 +76,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         "Product Rate",
         "Product qty",
         "Product Company Name",
+        
       ];
       createTableHeadings(headings);
       createTableDataRows(productData);
