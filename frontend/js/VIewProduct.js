@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
+  const addItemBtn = document.getElementsByClassName("add-item")[0];
   const tableBody = document.querySelector("table tbody");
   const API_URL = `http://localhost:8000`;
 
@@ -44,19 +45,42 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function createTableDataRows(data) {
     data.forEach((item) => {
-      const dataRow = document.createElement("tr");
+      const eachRow = document.createElement("tr");
+      Object.values(item)
+        .slice(1)
+        .forEach((cellData) => {
+          const td = document.createElement("td");
+          td.textContent = cellData;
+          eachRow.appendChild(td);
+        });
 
-      Object.values(item).forEach((cellData) => {
-        const td = document.createElement("td");
-        td.textContent = cellData;
-        dataRow.appendChild(td);
-      });
+      const checkboxCell = document.createElement("td");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkboxCell.appendChild(checkbox);
+      eachRow.appendChild(checkboxCell);
+
+      const editButtonCell = document.createElement("td");
       const editButton = document.createElement("button");
       editButton.setAttribute("class", "edit-btn");
       editButton.textContent = "Edit";
-      dataRow.appendChild(editButton);
+      editButtonCell.appendChild(editButton);
+      eachRow.appendChild(editButtonCell);
 
-      tableBody.appendChild(dataRow);
+      tableBody.appendChild(eachRow);
+      isChecked(eachRow, checkbox, item.Product_uuid);
+    });
+  }
+
+  function isChecked(eachRow, checkBox, UUID) {
+    checkBox.addEventListener("click", () => {
+      if (!eachRow.hasAttribute("data-uuid")) {
+        eachRow.setAttribute("data-uuid", UUID);
+        addItemBtn.style.display = "block";
+      } else {
+        eachRow.removeAttribute("data-uuid");
+        addItemBtn.style.display = "none";
+      }
     });
   }
 
@@ -74,6 +98,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         "Product Rate",
         "Product qty",
         "Product Company Name",
+        "Add Item",
       ];
       createTableHeadings(headings);
       createTableDataRows(productData);

@@ -6,6 +6,7 @@ const viewProductService = async (data, res) => {
   try {
     const sql = `
     SELECT
+    pd.Product_uuid,
     pd.Product_id,
     cat.Name AS Category_name,
     cls.class_type,
@@ -27,7 +28,7 @@ JOIN
       res.send(result);
     } else {
       res.status(400).send({ data: null, message: `Product Doesn't Exist` });
-    }
+    }  
   } catch (error) {
     console.log(error);
   } finally {
