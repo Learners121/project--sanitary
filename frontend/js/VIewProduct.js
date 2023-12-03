@@ -45,12 +45,14 @@ document.addEventListener("DOMContentLoaded", async function () {
   function createTableDataRows(data) {
     data.forEach((item) => {
       const dataRow = document.createElement("tr");
-
-      Object.values(item).forEach((cellData) => {
+      // console.log(item);
+      console.log(Object.values(item));
+      Object.values(item).slice(1).forEach((cellData) => {
         const td = document.createElement("td");
         td.textContent = cellData;
         dataRow.appendChild(td);
-      });
+    });
+    
       const editButton = document.createElement("button");
       editButton.setAttribute("class", "edit-btn");
       editButton.textContent = "Edit";

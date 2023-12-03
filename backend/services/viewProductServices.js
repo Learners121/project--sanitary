@@ -6,6 +6,7 @@ const viewProductService = async (data, res) => {
   try {
     const sql = `
     SELECT
+    pd.Product_uuid,
     pd.Product_id,
     cat.Name AS Category_name,
     cls.class_type,
