@@ -1,104 +1,86 @@
-const menuBar = document.querySelector('.fa-bars');
-const menuBarContainer = document.querySelector('.menu-bar')
-const containerOfNav = document.querySelector('.container1')
-menuBar.addEventListener('click', clickMenu);
+document.addEventListener("DOMContentLoaded", async function () {
+  const tableBody = document.querySelector("table tbody");
+  const API_URL = `http://localhost:8000`;
 
-function clickMenu() {
-    containerOfNav.classList.toggle('active');
-    menuBar.classList.toggle('active');
-    const createCloseBtn = document.createElement('i')
-    createCloseBtn.className = 'fa-solid fa-close'
-    containerOfNav.appendChild(createCloseBtn)
-    createCloseBtn.addEventListener('click', () => {
-        containerOfNav.classList.toggle('active');
-        menuBar.classList.toggle('active');
-    })
-}
-
-const tBody = document.querySelector("table");
-
-function generateHeadings(headings) {
-  const tr = document.createElement("tr");
-  tr.setAttribute("class","heading-section")
-  headings.forEach((heading) => {
-    const th = document.createElement("th");
-    th.textContent = heading;
-    tr.appendChild(th);
-   
-  });
-  const editButton = document.createElement("tr");
-  const actionCell = document.createElement("th");
-  const dataOfButton = document.createElement("i")
-  dataOfButton.setAttribute("class","fa-solid fa-file-pen")
-  actionCell.appendChild(dataOfButton)
-  actionCell.appendChild(editButton);
-  tr.appendChild(actionCell);
-  tBody.appendChild(tr);
-}
-
-async function fetchData(url) {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`URL is not valid`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(`Error:`, error);
+  if (!tableBody) {
+    console.error("Table body not found. Exiting initialization.");
+    return;
   }
-}
 
-
-async function generateHeadingsData() {
+  async function fetchDataFromBackend(url) {
     try {
-      const data = await fetchData("../dumyDataViewProduct/View-product-DumyData.json");
-      data.forEach((item) => {
-        const tr = document.createElement("tr");
-        tr.setAttribute("class","data-section")
-        const keys = [
-          "id",
-          "customer_name",
-          "mobile_number",
-          "address",
-          "total_amount",
-          "deposit",
-          "pending_amount",
-          "purchased_product",
-          "purchased_time",
-        ];
-        
-        keys.forEach((key,index) => {
-          const td = document.createElement("td");
-          td.textContent = `${item[key]}`;
-          if (index === 0) {
-            td.classList.add("sr-no");
-          }
-          tr.appendChild(td);
-        });
-        const editButton = document.createElement("button");
-        editButton.textContent = "Edit ";
-        editButton.setAttribute("class","edit-btn")
-        const actionCell = document.createElement("td");
-        actionCell.appendChild(editButton);
-        tr.appendChild(actionCell);
-        tBody.appendChild(tr);
-      });
-    }catch (error) {
-      console.log("Error:", error);
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+
+      return data;
+    } catch (error) {
+      console.error(error.message);
+      throw error;
     }
   }
-  generateHeadings([
-    "ID",
-    "Customer Name",
-    "Mobile Number",
-    "Address",
-    "Total Amount",
-    "Deposit",
-    "Pending Amount",
-    "Purchased Product",
-    "Purchase Time",
-  ]);
-  
-  generateHeadingsData();
-  
+
+  function createTableHeadings(headings) {
+    const headingRow = document.createElement("tr");
+    headingRow.classList.add("heading-section");
+
+    headings.forEach((heading) => {
+      const th = document.createElement("th");
+      th.textContent = heading;
+      headingRow.appendChild(th);
+    });
+
+    const actionCell = document.createElement("th");
+    const editButtonIcon = document.createElement("i");
+    editButtonIcon.classList.add("fa-solid", "fa-file-pen");
+    actionCell.appendChild(editButtonIcon);
+    headingRow.appendChild(actionCell);
+
+    tableBody.appendChild(headingRow);
+  }
+
+  function createTableDataRows(data) {
+    data.forEach((item) => {
+      const dataRow = document.createElement("tr");
+
+      Object.values(item).forEach((cellData) => {
+        const td = document.createElement("td");
+        td.textContent = cellData;
+        dataRow.appendChild(td);
+      });
+      const editButton = document.createElement("button");
+      editButton.setAttribute("class", "edit-btn");
+      editButton.textContent = "Edit";
+      dataRow.appendChild(editButton);
+
+      tableBody.appendChild(dataRow);
+    });
+  }
+
+  try {
+    const productData = await fetchDataFromBackend(`${API_URL}/view-product`);
+
+    if (productData && productData.length > 0) {
+      const headings = [
+        "ID",
+        "Category Name",
+        "Class Type",
+        "Product Name",
+        "Product Code",
+        "Product Size",
+        "Product Rate",
+        "Product qty",
+        "Product Company Name",
+      ];
+      createTableHeadings(headings);
+      createTableDataRows(productData);
+    } else {
+      console.warn("No data received from the backend.");
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+});

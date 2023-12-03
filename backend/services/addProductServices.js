@@ -1,5 +1,5 @@
 import openConnection from "../database/connection.js";
-import { checkData, getData, insertData } from "../util/globalUtil.js";
+import { checkData, insertData } from "../util/globalUtil.js";
 
 const addProductService = async (data, res) => {
   const {
@@ -25,15 +25,11 @@ const addProductService = async (data, res) => {
     if (categoryId === null) {
       sql = `INSERT INTO Category (Name) VALUES ("${categoryName}")`;
       categoryId = await insertData(conn, sql);
-    } else {
-      categoryId = categoryId.Category_id;
     }
 
-    if (categoryId === null) {
+    if (classId === null) {
       sql = `INSERT INTO class (class_type) VALUES("${classType}")`;
       classId = await insertData(conn, sql);
-    } else {
-      classId = classId.class_id;
     }
 
     sql = `INSERT INTO Product_details (
@@ -60,11 +56,10 @@ const addProductService = async (data, res) => {
   } catch (err) {
     console.log(err.message);
     res.status(500).send({ data: null, message: "Product Already Exist" });
+  } finally {
     if (conn !== null) {
       conn.close();
     }
-  } finally {
-    console.log("inside layer");
   }
 };
 

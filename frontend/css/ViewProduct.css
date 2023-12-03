@@ -13,7 +13,6 @@
 body {
   background: #f1f1f1;
   font-family: 'Assistant', sans-serif;
-  /* font-family: 'Bebas Neue', sans-serif; */
 }
 
 .container1 {
@@ -136,8 +135,7 @@ body {
   }
 }
 
-
-/* view table */
+/* View table styles */
 
 .page-heading {
   display: flex;
@@ -153,8 +151,14 @@ body {
 #table-container {
   background-color: #f9f9f9;
   width: 100%;
-  flex-wrap: wrap;
   margin: 10px;
+  margin-top: 20px;
+  overflow-x: auto; /* Add this for horizontal scrolling if needed */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 th {
@@ -182,11 +186,6 @@ td {
   border-radius: 0px 10px 0px 0px;
 }
 
-#table-container {
-  border-collapse: collapse;
-}
-
-
 .sr-no {
   font-family: 'Roboto Slab', serif;
   color: lightslategray;
@@ -196,10 +195,11 @@ td {
   background: lightgray;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 8px;
   border-radius: 10px;
   box-shadow: 1px 4px 8px;
   cursor: pointer;
+  margin: 8px 0 0 15px;
   color: rgba(0, 0, 0, 0.6);
 }
 
