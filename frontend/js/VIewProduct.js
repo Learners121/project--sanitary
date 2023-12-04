@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
+  const AddButton = document.getElementsByClassName("innerContainer3");
   const tableBody = document.querySelector("table tbody");
   const API_URL = `http://localhost:8000`;
 
@@ -35,9 +36,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const actionCell = document.createElement("th");
     const editButtonIcon = document.createElement("i");
-    editButtonIcon.classList.add("fa-solid", "fa-file-pen");
+    editButtonIcon.classList.add("fa-solid", "fa-trash");
     actionCell.appendChild(editButtonIcon);
     headingRow.appendChild(actionCell);
+    tableBody.appendChild(headingRow);
+
+    const actionCellForDelete = document.createElement("th");
+    const deleteButtonIcon = document.createElement("i");
+    deleteButtonIcon.classList.add("fa-solid", "fa-file-pen");
+    actionCellForDelete.appendChild(deleteButtonIcon);
+    headingRow.appendChild(actionCellForDelete);
     tableBody.appendChild(headingRow);
   }
 
@@ -45,31 +53,73 @@ document.addEventListener("DOMContentLoaded", async function () {
     data.forEach((item) => {
       console.log(item);
       console.log(item.Product_uuid);
-      const dataRow = document.createElement("tr");
-      dataRow.setAttribute("data-uuid",item.Product_uuid)
-      Object.values(item).slice(1).forEach((cellData) => {
-        const td = document.createElement("td");
-        td.textContent = cellData;
-        dataRow.appendChild(td);
-    });
-      const tdForEditButton = document.createElement("td")
+      const eachRow = document.createElement("tr");
+      Object.values(item)
+        .slice(1)
+        .forEach((cellData) => {
+          const td = document.createElement("td");
+          td.textContent = cellData;
+          eachRow.appendChild(td);
+        });
+
+      const checkboxCell = document.createElement("td");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.setAttribute("class", "Check-box");
+      checkboxCell.appendChild(checkbox);
+      eachRow.appendChild(checkboxCell);
+
+      const deleteButtonCell = document.createElement("td");
+      const deleteButton = document.createElement("button");
+      deleteButton.setAttribute("class", "edit-btn");
+      deleteButton.textContent = "Delete";
+      deleteButtonCell.appendChild(deleteButton);
+      eachRow.appendChild(deleteButtonCell);
+
+      const editButtonCell = document.createElement("td");
       const editButton = document.createElement("button");
       editButton.setAttribute("class", "edit-btn");
       editButton.textContent = "Edit";
-      tdForEditButton.appendChild(editButton)
-      dataRow.appendChild(tdForEditButton);
-      tableBody.appendChild(dataRow)
+      editButtonCell.appendChild(editButton);
+      eachRow.appendChild(editButtonCell);
 
+      tableBody.appendChild(eachRow);
+      isChecked(eachRow, checkbox, item.Product_uuid);
+    });
+  }
 
-      const tdForDeleteButton = document.createElement("td")
-      const deleteButton = document.createElement("button");
-      deleteButton.setAttribute("class", "delete-btn");
-      deleteButton.textContent = "Delete";
-      tdForDeleteButton.appendChild(deleteButton)
-      dataRow.appendChild(tdForDeleteButton);
-      dataRow.appendChild(tdForEditButton);
-      tableBody.appendChild(dataRow)
-      ;
+  function isChecked(eachRow, checkBox, UUID) {
+    checkBox.addEventListener("click", () => {
+      if (!eachRow.hasAttribute("data-uuid")) {
+        eachRow.setAttribute("data-uuid", UUID);
+        const anyCheckboxChecked = Array.from(
+          document.querySelectorAll(".Check-box")
+        ).some((checkbox) => checkbox.checked);
+
+        if (
+          !document.querySelector(".innerContainer4 button") &&
+          anyCheckboxChecked
+        ) {
+          const addToCartButton = document.createElement("button");
+          addToCartButton.textContent = "Add To Cart";
+          const innerContainer3 = document.querySelector(".innerContainer4");
+          innerContainer3.appendChild(addToCartButton);
+        }
+      } else {
+        eachRow.removeAttribute("data-uuid");
+        const anyCheckboxChecked = Array.from(
+          document.querySelectorAll(".Check-box")
+        ).some((checkbox) => checkbox.checked);
+
+        if (!anyCheckboxChecked) {
+          const existingButton = document.querySelector(
+            ".innerContainer4 button"
+          );
+          if (existingButton) {
+            existingButton.remove();
+          }
+        }
+      }
     });
   }
 
@@ -87,7 +137,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         "Product Rate",
         "Product qty",
         "Product Company Name",
-        "Delete Product"
+        "Add Item",
       ];
       createTableHeadings(headings);
       createTableDataRows(productData);
