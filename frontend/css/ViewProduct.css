@@ -188,6 +188,35 @@ td {
   filter: brightness(0.9);
 }
 
+
+.innerContainer4 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28%;
+  margin-top: 4%;
+  align-items: center;
+}
+
+.innerContainer4 button {
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  background-color: rgb(10, 201, 10);
+  width: 100px;
+  color: var(--font-color);
+  color: rgba(0, 0, 0, 0.664);
+  transition: 0.4s all;
+  font-size: 1rem;
+}
+
+.innerContainer4 button:hover {
+  background-color: green;
+  color: white;
+}
+
 .heading-section {
   background-color: lightgray;
 }
