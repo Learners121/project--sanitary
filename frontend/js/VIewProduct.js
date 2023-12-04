@@ -38,25 +38,36 @@ document.addEventListener("DOMContentLoaded", async function () {
     editButtonIcon.classList.add("fa-solid", "fa-file-pen");
     actionCell.appendChild(editButtonIcon);
     headingRow.appendChild(actionCell);
-
     tableBody.appendChild(headingRow);
   }
 
   function createTableDataRows(data) {
     data.forEach((item) => {
+      console.log(item);
       console.log(item.Product_uuid);
       const dataRow = document.createElement("tr");
+      dataRow.setAttribute("data-uuid",item.Product_uuid)
       Object.values(item).slice(1).forEach((cellData) => {
         const td = document.createElement("td");
         td.textContent = cellData;
         dataRow.appendChild(td);
-
     });
-    
+      const tdForEditButton = document.createElement("td")
       const editButton = document.createElement("button");
       editButton.setAttribute("class", "edit-btn");
       editButton.textContent = "Edit";
-      dataRow.appendChild(editButton);
+      tdForEditButton.appendChild(editButton)
+      dataRow.appendChild(tdForEditButton);
+      tableBody.appendChild(dataRow)
+
+
+      const tdForDeleteButton = document.createElement("td")
+      const deleteButton = document.createElement("button");
+      deleteButton.setAttribute("class", "delete-btn");
+      deleteButton.textContent = "Delete";
+      tdForDeleteButton.appendChild(deleteButton)
+      dataRow.appendChild(tdForDeleteButton);
+      dataRow.appendChild(tdForEditButton);
       tableBody.appendChild(dataRow)
       ;
     });
@@ -76,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         "Product Rate",
         "Product qty",
         "Product Company Name",
-        
+        "Delete Product"
       ];
       createTableHeadings(headings);
       createTableDataRows(productData);
