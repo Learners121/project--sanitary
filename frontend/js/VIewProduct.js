@@ -54,11 +54,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.log(item);
       console.log(item.Product_uuid);
       const eachRow = document.createElement("tr");
+      
       Object.values(item)
         .slice(1)
         .forEach((cellData) => {
           const td = document.createElement("td");
           td.textContent = cellData;
+          td.setAttribute('class','tableData')
           eachRow.appendChild(td);
         });
 
@@ -78,6 +80,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const editButtonCell = document.createElement("td");
       const editButton = document.createElement("button");
+      // editButton.classList.add('editButton');
       editButton.setAttribute("class", "edit-btn");
       editButton.textContent = "Edit";
       editButtonCell.appendChild(editButton);
@@ -87,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       isChecked(eachRow, checkbox, item.Product_uuid);
     });
   }
+
 
   function isChecked(eachRow, checkBox, UUID) {
     checkBox.addEventListener("click", () => {
@@ -148,3 +152,4 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error(error.message);
   }
 });
+
