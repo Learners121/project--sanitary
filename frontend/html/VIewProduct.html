@@ -12,9 +12,11 @@
     href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&family=Bebas+Neue&family=Cedarville+Cursive&family=Roboto+Slab:wght@500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/ViewProduct.css" />
+  <link rel="stylesheet" href="../css/form-pop-up.css">
 </head>
 
 <body>
+  <div class="viewProductBody">
   <div class="menu-bar">
     <i class="fa-solid fa-bars"></i>
   </div>
@@ -54,7 +56,69 @@
   </div>
   <div class="innerContainer4">
   </div>
-  <script src="../js/VIewProduct.js"></script>
-</body>
+</div>
 
+  
+  <div class="update-form">
+    <div class="form-title">
+      <h1>Update Fields</h1>
+    </div>
+    <form action="" class="form-popup">
+     <table class="popup-table">
+         <tr>
+             <td colspan="3" class="inputTD">
+                 <div class="form-heading">Category Name:</div>
+                 <label for=""><input class="one-col form-inp" type="text" placeholder="enter here"></label>
+             </td>
+         </tr>
+         <tr>
+             <td class="inputTD" >
+                 <div class="form-heading">Class Type</div>
+                 <label for=""><input class="two-col form-inp" type="text"  placeholder="enter here"></label>
+             </td>
+             <td class="inputTD">
+                 <div class="form-heading">Product Name:</div>
+                 <label for=""><input class="two-col form-inp" type="text"  placeholder="enter here"></label>
+             </td>
+                  
+         </tr>
+         <tr> 
+             <td colspan="3" class="inputTD">
+                 <div class="form-heading">Product Code:</div>
+                 <label for=""><input class="one-col form-inp" type="text"  placeholder="enter here"></label>                    
+             </td>
+         </tr>
+ 
+         <tr>
+             <td class="inputTD">
+                 <div class="form-heading">Product Size:</div>
+                 <label for=""><input class="three-col form-inp" type="number"  placeholder="enter here"></label>
+             </td>
+             <td class="inputTD">
+                 <div class="form-heading">Product Rate:</div>
+                 <label for=""><input class="three-col form-inp" type="number" placeholder="enter here"></label>
+             </td>
+             <td class="inputTD">
+                 <div class="form-heading">Product Quantity:</div>
+                 <label for=""><input class="three-col form-inp" type="number" placeholder="enter here"></label>
+             </td>
+         </tr>
+         <tr>
+             <td colspan="3" class="inputTD">
+                 <div class="form-heading">Product Company:</div>
+                 <label for=""><input class="one-col form-inp" type="text" placeholder="enter here"></label>
+             </td>
+         </tr>
+     </table>
+
+     <div class="btns">
+         <button type="submit" class="update-btn form-btn">update</button> 
+         <button type="submit" class="cancel-btn form-btn">cancel</button>
+     </div>        
+     </form>
+ </div>
+
+  <script src="../js/VIewProduct.js"></script>
+  <script src="../js/form-pop-update.js"></script>
+</body>
 </html>
