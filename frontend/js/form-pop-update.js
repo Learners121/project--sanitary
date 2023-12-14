@@ -3,6 +3,7 @@
  let update_form = document.querySelector('.update-form');
  let cancel_btn = document.querySelector('.cancel-btn');
  let viewProductBody = document.querySelector('.viewProductBody');
+ console.log('sssss')
  console.log(viewProductBody);
  document.addEventListener('click',(e)=>{
       if(e.target.tagName == 'BUTTON' && e.target.textContent == 'Edit'){
