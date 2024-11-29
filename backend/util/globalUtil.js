@@ -1,60 +1,33 @@
-const getData = async (conn, tableName, fieldsName) => {
+const getData = async (conn, sql) => {
   try {
-    const [rows] = await conn.execute(
-      `SELECT ${fieldsName.join(",") || "*"} FROM ${tableName}`
-    );
+    const [rows] = await conn.query(sql);
     return rows;
   } catch (err) {
     throw new Error(err.sqlMessage);
   }
 };
 
-const insertData = async (conn, tableName, fieldsName, data) => {
+const insertData = async (conn, sql) => {
   try {
-    switch (tableName) {
-      case "Category":
-        const queryCategory = `INSERT INTO ${tableName} (${fieldsName.join(
-          ","
-        )}) VALUES(?)`;
-        const [categoryTableDetails] = await conn.execute(queryCategory, [
-          data,
-        ]);
-        break;
-      case "Product_details":
-        const queryProductDetails = `INSERT INTO ${tableName} (${fieldsName.join(
-          ","
-        )}) VALUES(?,?,?,?,?,?)`;
-        const {
-          productName,
-          productCode,
-          productSize,
-          productQuantity,
-          productRate,
-          productCompany,
-        } = data;
-        const [productTableDetails] = await conn.execute(queryProductDetails, [
-          productName,
-          productCode,
-          productSize,
-          productQuantity,
-          productRate,
-          productCompany,
-        ]);
-        break;
-      case "class":
-        const queryClass = `INSERT INTO ${tableName} (${fieldsName.join(
-          ","
-        )}) VALUES(?)`;
-        const [classTableDetails] = await conn.execute(queryClass, [data]);
-        break;
-      default:
-        throw new Error(`Invalid Table`);
-    }
+    const [rows, fields] = await conn.query(sql);
+    return rows.insertId;
   } catch (err) {
+    console.log(err);
     throw new Error(err.sqlMessage);
-  } finally {
-    console.log(`Inside Util Layer`);
   }
 };
 
-export { getData, insertData };
+const checkData = async (conn, sql) => {
+  try {
+    let result = null;
+    const data = await conn.query(sql);
+    if(data[0].length > 0) {
+      result = data[0][0]
+    }
+    return result;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+export { getData, insertData, checkData };

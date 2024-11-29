@@ -1,0 +1,73 @@
+const arr = [
+  {
+    id: 1,
+    name: "Product 1",
+    productName: "sam 1",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 2,
+    name: "Product 2",
+    productName: "sam 2",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 3,
+    name: "Product 3",
+    productName: "sam 3",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 4,
+    name: "Product 4",
+    productName: "sam 4",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 5,
+    name: "Product 5",
+    productName: "sam 5",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 6,
+    name: "Product 6",
+    productName: "sam 6",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 7,
+    name: "Product 7",
+    productName: "sam 7",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 8,
+    name: "Product 8",
+    productName: "sam 8",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 9,
+    name: "Product 9",
+    productName: "sam 9",
+    address: "india",
+    number: 1234532343,
+  },
+  {
+    id: 10,
+    name: "Product 10",
+    productName: "sam 10",
+    address: "india",
+    number: 1234532343,
+  },
+];
+export default arr;
